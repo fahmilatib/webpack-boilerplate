@@ -31,6 +31,9 @@ let config = {
     },
     plugins: [
         new FileManagerPlugin({
+            onStart: {
+                delete: [buildDir],
+            },
             onEnd: {
                 copy: [
                     { source: `${buildDir}/*.js`, destination: jsDir },
